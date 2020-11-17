@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+    translation-server:
+        build: ./server
+        environment:
+            ENV: development
+            FLASK_APP: /code/server.py
+            FLASK_ENV: development
+        ports:
+            - 5000:5000
+        volumes:
+            - ./server:/code
+    client:
+        build:
+            context: ./client
+            target: development
+        volumes:
+            - ./client/src:/code/src
+        ports:
+            - 5001:8080
+        entrypoint: [ "npm", "run", "dev-server" ]
+        depends_on: 
+            - translation-server
+        links: 
+            - translation-server
