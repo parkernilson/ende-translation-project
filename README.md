@@ -18,9 +18,17 @@ To run development:
 ```
 $ docker-compose -f docker-compose.dev.yml up --build
 ```
-To run production:
+To run "production" on local computer (run the same images as would run on production, but on local computer):
 ```
-$ docker-compose -f docker-compose.prod.yml up --build
+$ docker-compose up --build
+```
+To run on the production server:
+```
+$ docker-compose up
+```
+and whenever changes are made to the remote images, the following command should be run to update them on the server:
+```
+$ docker-compose pull
 ```
 
 The client will be accessible at `localhost:5001`.
