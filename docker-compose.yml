@@ -1,6 +1,7 @@
 version: "3.8"
 services:
     translation-server:
+        image: parkernilson/ende-server
         build: ./server
         environment:
             ENV: production
@@ -11,6 +12,7 @@ services:
         ports:
             - 5000:5000
     client:
+        image: parkernilson/ende-client
         build: ./client
         ports:
             - 5001:80
