@@ -11,7 +11,7 @@ services:
     client:
         build: ./client
         ports:
-            - 5001:8080
+            - 5001:80
         depends_on: 
             - translation-server
         links: 
