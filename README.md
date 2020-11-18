@@ -24,13 +24,12 @@ $ docker-compose up --build
 ```
 To run on the production server:
 ```
-$ docker-compose up
+$ docker-compose pull && docker-compose up
 ```
 and whenever changes are made to the remote images, the following command should be run to update them on the server:
 ```
 $ docker-compose pull
 ```
 
-The client will be accessible at `localhost:5001`.
-
-The server will be accessible at `localhost:5000`.
+In development, the client will be accessible at `localhost:5001` and the server will be accessible at `localhost:5000`.
+In production, the server will be accessible on port `80`.

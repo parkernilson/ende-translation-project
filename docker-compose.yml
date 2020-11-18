@@ -15,7 +15,7 @@ services:
         image: parkernilson/ende-client
         build: ./client
         ports:
-            - 5001:80
+            - 80:80
         depends_on: 
             - translation-server
         links: 
