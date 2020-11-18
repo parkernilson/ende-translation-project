@@ -6,6 +6,8 @@ services:
             ENV: production
             FLASK_APP: /code/server.py
             FLASK_ENV: production
+        volumes:
+            - ~/ml_models/ende/1:/models/ende/1
         ports:
             - 5000:5000
     client:
