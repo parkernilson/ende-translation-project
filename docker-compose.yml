@@ -11,6 +11,7 @@ services:
             - ~/ml_models/ende/1:/models/ende/1
         ports:
             - 5000:5000
+        restart: unless-stopped
     client:
         image: parkernilson/ende-client
         build: ./client
@@ -20,3 +21,4 @@ services:
             - translation-server
         links: 
             - translation-server
+        restart: unless-stopped
