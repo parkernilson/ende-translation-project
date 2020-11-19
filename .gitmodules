@@ -4,3 +4,6 @@
 [submodule "server"]
 	path = server
 	url = https://github.com/parkernilson/ende-server.git
+[submodule "reverse-proxy"]
+	path = reverse-proxy
+	url = https://github.com/parkernilson/ende-reverse-proxy.git

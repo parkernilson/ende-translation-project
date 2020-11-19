@@ -12,13 +12,25 @@ services:
         ports:
             - 5000:5000
         restart: unless-stopped
-    client:
-        image: parkernilson/ende-client
+    client-files:
+        image: parkernilson/ende-client-files
         build: ./client
-        ports:
+        volumes:
+            - client-files:/public
+    reverse-proxy:
+        image: parkernilson/ende-reverse-proxy
+        build: ./reverse-proxy
+        ports: 
             - 80:80
-        depends_on: 
+            - 9000:9000
+        volumes: 
+            - client-files:/usr/share/nginx/html
+        depends_on:
             - translation-server
-        links: 
+            - client-files
+        links:
             - translation-server
         restart: unless-stopped
+
+volumes:
+    client-files:
