@@ -35,6 +35,9 @@ In development, the client will be accessible at `localhost:5001` and the server
 
 In production, the application will be served behind an NGINX reverse proxy.
 
+## Note about including pretrained model
+The translation server service will look for the pretrained model in `~/ml_models` for the pretrained model. This means that if you run `docker-compose up` as `root` it will look in `/home` and if you run it as a non-root user, it will look in `/home/${USER}`.
+
 ## Hosting
 As of 11/19/2020, this project is hosted on a digital ocean Docker droplet.
 
