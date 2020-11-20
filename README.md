@@ -32,4 +32,11 @@ $ docker-compose pull
 ```
 
 In development, the client will be accessible at `localhost:5001` and the server will be accessible at `localhost:5000`.
-In production, the server will be accessible on port `80`.
+
+In production, the application will be served behind an NGINX reverse proxy.
+
+## Hosting
+As of 11/19/2020, this project is hosted on a digital ocean Docker droplet.
+
+### Deployment
+For simplicity, this github project is cloned on the droplet, and it is deployed by pulling from this repository, then building the containers on the server manually. The containers are orchestrated with Docker Compose.
