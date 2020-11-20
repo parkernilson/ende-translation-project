@@ -7,7 +7,7 @@ services:
             FLASK_APP: /code/server.py
             FLASK_ENV: production
         volumes:
-            - ~/ml_models/ende/1:/models/ende/1
+            - $ML_MODELS/ende/1:/models/ende/1
         ports:
             - 5000:5000
         restart: unless-stopped
