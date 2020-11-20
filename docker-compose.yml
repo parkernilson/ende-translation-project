@@ -1,7 +1,6 @@
 version: "3.8"
 services:
     translation-server:
-        image: parkernilson/ende-server
         build: ./server
         environment:
             ENV: production
@@ -13,12 +12,10 @@ services:
             - 5000:5000
         restart: unless-stopped
     client-files:
-        image: parkernilson/ende-client
         build: ./client
         volumes:
             - client-files:/public
     reverse-proxy:
-        image: parkernilson/ende-reverse-proxy
         build: ./reverse-proxy
         ports: 
             - 80:80
